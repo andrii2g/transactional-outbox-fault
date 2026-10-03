@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "outbox-reject-twice",
+  "strategy": "outbox",
+  "command": {
+    "orderId": "order-001",
+    "eventId": "event-001",
+    "amountCents": 1250
+  },
+  "timing": {
+    "commitTicks": 1,
+    "publishTicks": 1,
+    "pollTicks": 5,
+    "restartTicks": 3,
+    "retryBaseTicks": 2,
+    "retryCapTicks": 8
+  },
+  "budgets": {
+    "maxRestarts": 4,
+    "maxPublishAttempts": 10,
+    "maxTicks": 1000
+  },
+  "faults": [],
+  "broker": {
+    "outcomes": [
+      "reject",
+      "reject",
+      "accept-ack"
+    ],
+    "defaultOutcome": "accept-ack"
+  },
+  "expected": {
+    "committedOrders": 1,
+    "acceptedDeliveries": 1,
+    "duplicateDeliveries": 0,
+    "lostEvents": 0,
+    "ghostEvents": 0,
+    "pendingOutboxRows": 0,
+    "publishAttempts": 3,
+    "publishRetries": 2,
+    "committedRowMutations": 3,
+    "extraWrites": 2,
+    "transactionCommits": 2,
+    "restartCount": 0,
+    "executionStatus": "completed",
+    "deliveryLatencyTicks": 18
+  }
+}

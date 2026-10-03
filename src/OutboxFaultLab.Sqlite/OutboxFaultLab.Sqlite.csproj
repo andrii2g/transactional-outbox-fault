@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup>
+<ProjectReference Include="../OutboxFaultLab.Core/OutboxFaultLab.Core.csproj" />
+<PackageReference Include="Microsoft.Data.Sqlite" />
+<EmbeddedResource Include="*.sql" /></ItemGroup></Project>

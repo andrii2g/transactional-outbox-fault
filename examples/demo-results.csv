@@ -1,0 +1,5 @@
+id,committedOrders,acceptedDeliveries,duplicateDeliveries,lostEvents,ghostEvents,pendingOutboxRows,publishAttempts,publishRetries,committedRowMutations,extraWrites,transactionCommits,restartCount,executionStatus,distinctAcceptedEvents,missingEvents,recoverablePendingEvents,attemptedRowMutations,deliveryLatencyTicks,recoveryLatencyTicks,recoveryDrainTicks,strategy,consistency,verification
+db-first-lost,1,0,0,1,0,0,0,0,1,0,1,1,completed,0,1,0,1,,,,db-first,missing,passed
+publish-first-ghost,0,1,0,0,1,0,1,0,0,0,0,1,completed,1,0,0,0,,,,publish-first,ghost,passed
+outbox-before-dispatch,1,1,0,0,0,0,1,0,3,2,2,1,completed,1,0,0,3,9,6,7,outbox,consistent,passed
+outbox-after-accept,1,2,1,0,0,0,2,1,3,2,2,1,completed,1,0,0,3,6,,7,outbox,consistent,passed

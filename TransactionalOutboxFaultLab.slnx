@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OutboxFaultLab.Cli/OutboxFaultLab.Cli.csproj" />
+    <Project Path="src/OutboxFaultLab.Core/OutboxFaultLab.Core.csproj" />
+    <Project Path="src/OutboxFaultLab.Sqlite/OutboxFaultLab.Sqlite.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OutboxFaultLab.Tests/OutboxFaultLab.Tests.csproj" />
+  </Folder>
+</Solution>

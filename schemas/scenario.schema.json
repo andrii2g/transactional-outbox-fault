@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    },
+    "strategy": {
+      "enum": [
+        "db-first",
+        "publish-first",
+        "outbox"
+      ]
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,64}$"
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,64}$"
+        },
+        "amountCents": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807
+        }
+      },
+      "required": [
+        "orderId",
+        "eventId",
+        "amountCents"
+      ]
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "commitTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "publishTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "pollTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "restartTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "retryBaseTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "retryCapTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        }
+      },
+      "required": [
+        "commitTicks",
+        "publishTicks",
+        "pollTicks",
+        "restartTicks",
+        "retryBaseTicks",
+        "retryCapTicks"
+      ]
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxRestarts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "maxPublishAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "maxTicks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000000
+        }
+      },
+      "required": [
+        "maxRestarts",
+        "maxPublishAttempts",
+        "maxTicks"
+      ]
+    },
+    "faults": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "component": {
+            "enum": [
+              "producer",
+              "dispatcher"
+            ]
+          },
+          "point": {
+            "enum": [
+              "order-insert.after",
+              "order-insert.before",
+              "outbox-insert.after",
+              "outbox-insert.before",
+              "producer-commit.after",
+              "producer-commit.before",
+              "publish.after-accept",
+              "publish.after-ack",
+              "publish.before",
+              "sent-commit.after",
+              "sent-commit.before",
+              "sent-update.after",
+              "sent-update.before"
+            ]
+          },
+          "eventId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,64}$"
+          },
+          "occurrence": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          }
+        },
+        "required": [
+          "component",
+          "point",
+          "eventId",
+          "occurrence"
+        ]
+      }
+    },
+    "broker": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "outcomes": {
+          "type": "array",
+          "maxItems": 100000,
+          "items": {
+            "enum": [
+              "accept-ack",
+              "reject",
+              "accept-ack-lost"
+            ]
+          }
+        },
+        "defaultOutcome": {
+          "enum": [
+            "accept-ack",
+            "reject",
+            "accept-ack-lost"
+          ]
+        }
+      },
+      "required": [
+        "outcomes",
+        "defaultOutcome"
+      ]
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "committedOrders": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "acceptedDeliveries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicateDeliveries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lostEvents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ghostEvents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pendingOutboxRows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publishAttempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "publishRetries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "committedRowMutations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extraWrites": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transactionCommits": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "restartCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executionStatus": {
+          "enum": [
+            "completed",
+            "unresolved"
+          ]
+        },
+        "missingEvents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recoverablePendingEvents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinctAcceptedEvents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attemptedRowMutations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deliveryLatencyTicks": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "recoveryLatencyTicks": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "recoveryDrainTicks": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "strategy",
+    "command",
+    "timing",
+    "budgets",
+    "faults",
+    "broker",
+    "expected"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "outbox-budget-exhausted",
+  "strategy": "outbox",
+  "command": {
+    "orderId": "order-001",
+    "eventId": "event-001",
+    "amountCents": 1250
+  },
+  "timing": {
+    "commitTicks": 1,
+    "publishTicks": 1,
+    "pollTicks": 5,
+    "restartTicks": 3,
+    "retryBaseTicks": 2,
+    "retryCapTicks": 8
+  },
+  "budgets": {
+    "maxRestarts": 4,
+    "maxPublishAttempts": 3,
+    "maxTicks": 1000
+  },
+  "faults": [],
+  "broker": {
+    "outcomes": [],
+    "defaultOutcome": "reject"
+  },
+  "expected": {
+    "committedOrders": 1,
+    "acceptedDeliveries": 0,
+    "duplicateDeliveries": 0,
+    "lostEvents": 0,
+    "ghostEvents": 0,
+    "pendingOutboxRows": 1,
+    "publishAttempts": 3,
+    "publishRetries": 2,
+    "committedRowMutations": 2,
+    "extraWrites": 1,
+    "transactionCommits": 1,
+    "restartCount": 0,
+    "executionStatus": "unresolved",
+    "missingEvents": 1,
+    "recoverablePendingEvents": 1,
+    "recoveryLatencyTicks": null
+  }
+}

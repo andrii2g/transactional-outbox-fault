@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup>
+<ProjectReference Include="../OutboxFaultLab.Core/OutboxFaultLab.Core.csproj" />
+<ProjectReference Include="../OutboxFaultLab.Sqlite/OutboxFaultLab.Sqlite.csproj" />
+<Content Include="../../scenarios/**/*.json" Link="scenarios/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+<Content Include="../../expected/*.csv" Link="expected/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+<Content Include="../../schemas/scenario.schema.json" Link="schemas/scenario.schema.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+</ItemGroup></Project>

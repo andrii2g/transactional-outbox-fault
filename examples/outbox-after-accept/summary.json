@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "scenarioId": "outbox-after-accept",
+  "strategy": "outbox",
+  "executionStatus": "completed",
+  "consistency": "consistent",
+  "verification": "passed",
+  "metrics": {
+    "committedOrders": 1,
+    "acceptedDeliveries": 2,
+    "distinctAcceptedEvents": 1,
+    "missingEvents": 0,
+    "recoverablePendingEvents": 0,
+    "lostEvents": 0,
+    "ghostEvents": 0,
+    "duplicateDeliveries": 1,
+    "pendingOutboxRows": 0,
+    "publishAttempts": 2,
+    "publishRetries": 1,
+    "restartCount": 1,
+    "committedRowMutations": 3,
+    "attemptedRowMutations": 3,
+    "extraWrites": 2,
+    "transactionCommits": 2,
+    "deliveryLatencyTicks": 6,
+    "recoveryLatencyTicks": null,
+    "recoveryDrainTicks": 7
+  },
+  "expectedComparisons": [
+    {
+      "field": "acceptedDeliveries",
+      "expected": "2",
+      "actual": "2",
+      "passed": true
+    },
+    {
+      "field": "committedOrders",
+      "expected": "1",
+      "actual": "1",
+      "passed": true
+    },
+    {
+      "field": "committedRowMutations",
+      "expected": "3",
+      "actual": "3",
+      "passed": true
+    },
+    {
+      "field": "deliveryLatencyTicks",
+      "expected": "6",
+      "actual": "6",
+      "passed": true
+    },
+    {
+      "field": "duplicateDeliveries",
+      "expected": "1",
+      "actual": "1",
+      "passed": true
+    },
+    {
+      "field": "executionStatus",
+      "expected": "\u0022completed\u0022",
+      "actual": "\u0022completed\u0022",
+      "passed": true
+    },
+    {
+      "field": "extraWrites",
+      "expected": "2",
+      "actual": "2",
+      "passed": true
+    },
+    {
+      "field": "ghostEvents",
+      "expected": "0",
+      "actual": "0",
+      "passed": true
+    },
+    {
+      "field": "lostEvents",
+      "expected": "0",
+      "actual": "0",
+      "passed": true
+    },
+    {
+      "field": "pendingOutboxRows",
+      "expected": "0",
+      "actual": "0",
+      "passed": true
+    },
+    {
+      "field": "publishAttempts",
+      "expected": "2",
+      "actual": "2",
+      "passed": true
+    },
+    {
+      "field": "publishRetries",
+      "expected": "1",
+      "actual": "1",
+      "passed": true
+    },
+    {
+      "field": "recoveryDrainTicks",
+      "expected": "7",
+      "actual": "7",
+      "passed": true
+    },
+    {
+      "field": "recoveryLatencyTicks",
+      "expected": "null",
+      "actual": "null",
+      "passed": true
+    },
+    {
+      "field": "restartCount",
+      "expected": "1",
+      "actual": "1",
+      "passed": true
+    },
+    {
+      "field": "transactionCommits",
+      "expected": "2",
+      "actual": "2",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "plannedFaults": 1,
+  "firedFaults": 1,
+  "limitations": [
+    "Exception-based application crashes, not process termination or physical power loss.",
+    "Broker journal survives all modeled application crashes.",
+    "Single producer command and single dispatcher; no producer replay or broker deduplication.",
+    "Logical ticks are not milliseconds."
+  ],
+  "snapshots": [
+    {
+      "phase": "initial",
+      "tick": 0,
+      "epoch": 0,
+      "committedOrders": 0,
+      "outboxRows": 0,
+      "acceptedJournalCount": 0,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 0
+    },
+    {
+      "phase": "post-stop",
+      "tick": 7,
+      "epoch": 0,
+      "committedOrders": 1,
+      "outboxRows": 1,
+      "acceptedJournalCount": 1,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 1
+    },
+    {
+      "phase": "post-restart",
+      "tick": 10,
+      "epoch": 1,
+      "committedOrders": 1,
+      "outboxRows": 1,
+      "acceptedJournalCount": 1,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 1
+    },
+    {
+      "phase": "final",
+      "tick": 17,
+      "epoch": 1,
+      "committedOrders": 1,
+      "outboxRows": 1,
+      "acceptedJournalCount": 2,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 0
+    }
+  ]
+}

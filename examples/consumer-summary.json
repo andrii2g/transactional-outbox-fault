@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "verification": "passed",
+  "sourceScenario": "outbox-after-accept",
+  "acceptedJournal": [
+    {
+      "sequence": 1,
+      "event": {
+        "version": 1,
+        "eventId": "event-001",
+        "orderId": "order-001",
+        "amountCents": 1250
+      },
+      "acceptedTick": 7,
+      "epoch": 0
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "version": 1,
+        "eventId": "event-001",
+        "orderId": "order-001",
+        "amountCents": 1250
+      },
+      "acceptedTick": 16,
+      "epoch": 1
+    }
+  ],
+  "consumers": [
+    {
+      "mode": "naive",
+      "duplicateSkipped": 0,
+      "restartCount": 0,
+      "final": {
+        "projection": [
+          {
+            "orderId": "order-001",
+            "appliedCount": 2,
+            "appliedAmountCents": 2500
+          }
+        ],
+        "processedEvents": []
+      },
+      "snapshots": [
+        {
+          "phase": "initial",
+          "tick": 0,
+          "database": {
+            "projection": [],
+            "processedEvents": []
+          }
+        },
+        {
+          "phase": "final",
+          "tick": 2,
+          "database": {
+            "projection": [
+              {
+                "orderId": "order-001",
+                "appliedCount": 2,
+                "appliedAmountCents": 2500
+              }
+            ],
+            "processedEvents": []
+          }
+        }
+      ],
+      "trace": [
+        {
+          "sequence": 1,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "ConsumerDelivery",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 3,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "ConsumerMutation",
+          "component": "consumer",
+          "point": "projection-update",
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 4,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 5,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 6,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerCommitted",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 7,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 8,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerDelivery",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 9,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-2",
+          "details": {
+            "occurrence": "2"
+          }
+        },
+        {
+          "sequence": 10,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerMutation",
+          "component": "consumer",
+          "point": "projection-update",
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 11,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-2",
+          "details": {
+            "occurrence": "2"
+          }
+        },
+        {
+          "sequence": 12,
+          "tick": 2,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-2",
+          "details": {
+            "occurrence": "2"
+          }
+        },
+        {
+          "sequence": 13,
+          "tick": 2,
+          "epoch": 0,
+          "kind": "ConsumerCommitted",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 14,
+          "tick": 2,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-2",
+          "details": {
+            "occurrence": "2"
+          }
+        }
+      ],
+      "firedFaults": 0
+    },
+    {
+      "mode": "idempotent",
+      "duplicateSkipped": 1,
+      "restartCount": 0,
+      "final": {
+        "projection": [
+          {
+            "orderId": "order-001",
+            "appliedCount": 1,
+            "appliedAmountCents": 1250
+          }
+        ],
+        "processedEvents": [
+          {
+            "eventId": "event-001",
+            "orderId": "order-001",
+            "payloadHash": "665DC5A1921724E80A27C27B638DE41728D41B2D9898110C09207E5D768C85C9",
+            "processedTick": 0
+          }
+        ]
+      },
+      "snapshots": [
+        {
+          "phase": "initial",
+          "tick": 0,
+          "database": {
+            "projection": [],
+            "processedEvents": []
+          }
+        },
+        {
+          "phase": "final",
+          "tick": 1,
+          "database": {
+            "projection": [
+              {
+                "orderId": "order-001",
+                "appliedCount": 1,
+                "appliedAmountCents": 1250
+              }
+            ],
+            "processedEvents": [
+              {
+                "eventId": "event-001",
+                "orderId": "order-001",
+                "payloadHash": "665DC5A1921724E80A27C27B638DE41728D41B2D9898110C09207E5D768C85C9",
+                "processedTick": 0
+              }
+            ]
+          }
+        }
+      ],
+      "trace": [
+        {
+          "sequence": 1,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "ConsumerDelivery",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 2,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "inbox-insert.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 3,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "ConsumerMutation",
+          "component": "consumer",
+          "point": "inbox-insert",
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 4,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "inbox-insert.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 5,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 6,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "ConsumerMutation",
+          "component": "consumer",
+          "point": "projection-update",
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 7,
+          "tick": 0,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "projection-update.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 8,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.before",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 9,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerCommitted",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 10,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "HookReached",
+          "component": "consumer",
+          "point": "commit.after",
+          "eventId": "event-001",
+          "transactionId": "consumer-tx-1",
+          "details": {
+            "occurrence": "1"
+          }
+        },
+        {
+          "sequence": 11,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerDelivery",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 12,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "ConsumerRolledBack",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        },
+        {
+          "sequence": 13,
+          "tick": 1,
+          "epoch": 0,
+          "kind": "DuplicateSkipped",
+          "component": "consumer",
+          "point": null,
+          "eventId": "event-001",
+          "transactionId": null,
+          "details": {}
+        }
+      ],
+      "firedFaults": 0
+    }
+  ],
+  "limitation": "Deduplicated effects apply inside the consumer SQLite transaction only; external side effects are outside this guarantee."
+}

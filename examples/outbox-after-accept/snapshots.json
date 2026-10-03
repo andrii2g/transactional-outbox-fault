@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "snapshots": [
+    {
+      "phase": "initial",
+      "tick": 0,
+      "epoch": 0,
+      "database": {
+        "orders": [],
+        "outbox": []
+      },
+      "acceptedJournalCount": 0,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 0
+    },
+    {
+      "phase": "post-stop",
+      "tick": 7,
+      "epoch": 0,
+      "database": {
+        "orders": [
+          {
+            "orderId": "order-001",
+            "amountCents": 1250
+          }
+        ],
+        "outbox": [
+          {
+            "sequence": 1,
+            "eventId": "event-001",
+            "orderId": "order-001",
+            "payloadJson": "{\r\n  \u0022version\u0022: 1,\r\n  \u0022eventId\u0022: \u0022event-001\u0022,\r\n  \u0022orderId\u0022: \u0022order-001\u0022,\r\n  \u0022amountCents\u0022: 1250\r\n}",
+            "createdTick": 0,
+            "sentTick": null
+          }
+        ]
+      },
+      "acceptedJournalCount": 1,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 1
+    },
+    {
+      "phase": "post-restart",
+      "tick": 10,
+      "epoch": 1,
+      "database": {
+        "orders": [
+          {
+            "orderId": "order-001",
+            "amountCents": 1250
+          }
+        ],
+        "outbox": [
+          {
+            "sequence": 1,
+            "eventId": "event-001",
+            "orderId": "order-001",
+            "payloadJson": "{\r\n  \u0022version\u0022: 1,\r\n  \u0022eventId\u0022: \u0022event-001\u0022,\r\n  \u0022orderId\u0022: \u0022order-001\u0022,\r\n  \u0022amountCents\u0022: 1250\r\n}",
+            "createdTick": 0,
+            "sentTick": null
+          }
+        ]
+      },
+      "acceptedJournalCount": 1,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 1
+    },
+    {
+      "phase": "final",
+      "tick": 17,
+      "epoch": 1,
+      "database": {
+        "orders": [
+          {
+            "orderId": "order-001",
+            "amountCents": 1250
+          }
+        ],
+        "outbox": [
+          {
+            "sequence": 1,
+            "eventId": "event-001",
+            "orderId": "order-001",
+            "payloadJson": "{\r\n  \u0022version\u0022: 1,\r\n  \u0022eventId\u0022: \u0022event-001\u0022,\r\n  \u0022orderId\u0022: \u0022order-001\u0022,\r\n  \u0022amountCents\u0022: 1250\r\n}",
+            "createdTick": 0,
+            "sentTick": 16
+          }
+        ]
+      },
+      "acceptedJournalCount": 2,
+      "missingEvents": 0,
+      "ghostEvents": 0,
+      "pendingOutboxRows": 0
+    }
+  ],
+  "acceptedJournal": [
+    {
+      "sequence": 1,
+      "event": {
+        "version": 1,
+        "eventId": "event-001",
+        "orderId": "order-001",
+        "amountCents": 1250
+      },
+      "acceptedTick": 7,
+      "epoch": 0
+    },
+    {
+      "sequence": 2,
+      "event": {
+        "version": 1,
+        "eventId": "event-001",
+        "orderId": "order-001",
+        "amountCents": 1250
+      },
+      "acceptedTick": 16,
+      "epoch": 1
+    }
+  ]
+}

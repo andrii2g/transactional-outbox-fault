@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1280 1924" width="1280" height="1924" role="img" aria-labelledby="title description" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">outbox-after-accept</title>
+  <desc id="description">Executed trace grouped by owner. Horizontal position measures logical ticks; sequence labels retain ordering when ticks tie. Final: lost=0  ghost=0  pending=0  duplicates=1  completed</desc>
+  <rect width="1280" height="1924" fill="#f8fafc" />
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#64748b" />
+    </marker>
+  </defs>
+  <text x="24" y="30" font-family="sans-serif" font-size="20" fill="#0f172a">outbox-after-accept</text>
+  <text x="24" y="57" font-family="sans-serif" font-size="14" fill="#0f172a">Final: lost=0  ghost=0  pending=0  duplicates=1  completed</text>
+  <text x="24" y="81" font-family="sans-serif" font-size="13" fill="#0f172a">Broker journal survives modeled crashes. Logical ticks are not milliseconds.</text>
+  <text x="24" y="104" font-family="sans-serif" font-size="12" fill="#0f172a">Dashed = tentative mutation; solid = committed. X = crash; + = restart. Equal ticks retain #sequence.</text>
+  <line x1="180" y1="135" x2="1220" y2="135" stroke="#64748b" stroke-width="2" />
+  <line x1="180" y1="130" x2="180" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="175" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">0</text>
+  <line x1="363.529" y1="130" x2="363.529" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="358.529" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">3</text>
+  <line x1="547.059" y1="130" x2="547.059" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="542.059" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">6</text>
+  <line x1="791.765" y1="130" x2="791.765" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="786.765" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">10</text>
+  <line x1="975.294" y1="130" x2="975.294" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="970.294" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">13</text>
+  <line x1="1220" y1="130" x2="1220" y2="140" stroke="#64748b" stroke-width="2" />
+  <text x="1215" y="155" font-family="sans-serif" font-size="11" fill="#0f172a">17</text>
+  <text x="30" y="140" font-family="sans-serif" font-size="13" fill="#0f172a">Logical tick →</text>
+  <rect x="16" y="175" width="1248" height="448" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="30" y="199" font-family="sans-serif" font-size="16" fill="#0f172a">Producer</text>
+  <text x="180" y="221" font-family="sans-serif" font-size="12" fill="#0f172a">#1  t=0  epoch=0  HookReached order-insert.before producer-tx-1 event-001</text>
+  <line x1="180" y1="241" x2="181" y2="241" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="180" cy="241" r="4" fill="#334155" />
+  <text x="180" y="279" font-family="sans-serif" font-size="12" fill="#0f172a">#3  t=0  epoch=0  HookReached order-insert.after producer-tx-1 event-001</text>
+  <line x1="180" y1="299" x2="181" y2="299" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="180" cy="299" r="4" fill="#334155" />
+  <text x="180" y="337" font-family="sans-serif" font-size="12" fill="#0f172a">#4  t=0  epoch=0  HookReached outbox-insert.before producer-tx-1 event-001</text>
+  <line x1="180" y1="357" x2="181" y2="357" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="180" cy="357" r="4" fill="#334155" />
+  <text x="180" y="395" font-family="sans-serif" font-size="12" fill="#0f172a">#6  t=0  epoch=0  HookReached outbox-insert.after producer-tx-1 event-001</text>
+  <line x1="180" y1="415" x2="181" y2="415" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="180" cy="415" r="4" fill="#334155" />
+  <text x="180" y="453" font-family="sans-serif" font-size="12" fill="#0f172a">#7  t=0  epoch=0  HookReached producer-commit.before producer-tx-1 event-001</text>
+  <line x1="180" y1="473" x2="181" y2="473" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="180" cy="473" r="4" fill="#334155" />
+  <text x="180" y="511" font-family="sans-serif" font-size="12" fill="#0f172a">#9  t=1  epoch=0  HookReached producer-commit.after producer-tx-1 event-001</text>
+  <line x1="180" y1="531" x2="241.176" y2="531" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="241.176" cy="531" r="4" fill="#334155" />
+  <text x="180" y="569" font-family="sans-serif" font-size="12" fill="#0f172a">#15  t=10  epoch=1  RuntimeRestarted   </text>
+  <line x1="180" y1="589" x2="791.765" y2="589" stroke="#94a3b8" stroke-width="2" />
+  <line x1="786.765" y1="589" x2="796.765" y2="589" stroke="#15803d" stroke-width="2" />
+  <line x1="791.765" y1="584" x2="791.765" y2="594" stroke="#15803d" stroke-width="2" />
+  <rect x="16" y="623" width="1248" height="332" fill="#e2e8f0" stroke="#cbd5e1" />
+  <text x="30" y="647" font-family="sans-serif" font-size="16" fill="#0f172a">SQLite</text>
+  <text x="180" y="669" font-family="sans-serif" font-size="12" fill="#0f172a">#2  t=0  epoch=0  MutationExecuted  producer-tx-1 event-001 TENTATIVE order-insert</text>
+  <line x1="180" y1="689" x2="181" y2="689" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" />
+  <circle cx="180" cy="689" r="4" fill="#334155" />
+  <text x="180" y="727" font-family="sans-serif" font-size="12" fill="#0f172a">#5  t=0  epoch=0  MutationExecuted  producer-tx-1 event-001 TENTATIVE outbox-insert</text>
+  <line x1="180" y1="747" x2="181" y2="747" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" />
+  <circle cx="180" cy="747" r="4" fill="#334155" />
+  <text x="180" y="785" font-family="sans-serif" font-size="12" fill="#0f172a">#8  t=1  epoch=0  TransactionCommitted  producer-tx-1 event-001</text>
+  <line x1="180" y1="805" x2="241.176" y2="805" stroke="#94a3b8" stroke-width="2" />
+  <line x1="241.176" y1="798" x2="241.176" y2="812" stroke="#334155" stroke-width="2" />
+  <line x1="244.176" y1="798" x2="244.176" y2="812" stroke="#334155" stroke-width="2" />
+  <text x="180" y="843" font-family="sans-serif" font-size="12" fill="#0f172a">#23  t=16  epoch=1  MutationExecuted  sent-tx-1 event-001 TENTATIVE sent-update</text>
+  <line x1="180" y1="863" x2="1158.824" y2="863" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" />
+  <circle cx="1158.824" cy="863" r="4" fill="#334155" />
+  <text x="180" y="901" font-family="sans-serif" font-size="12" fill="#0f172a">#26  t=17  epoch=1  TransactionCommitted  sent-tx-1 event-001</text>
+  <line x1="180" y1="921" x2="1220" y2="921" stroke="#94a3b8" stroke-width="2" />
+  <line x1="1220" y1="914" x2="1220" y2="928" stroke="#334155" stroke-width="2" />
+  <line x1="1223" y1="914" x2="1223" y2="928" stroke="#334155" stroke-width="2" />
+  <rect x="16" y="955" width="1248" height="738" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="30" y="979" font-family="sans-serif" font-size="16" fill="#0f172a">Dispatcher</text>
+  <text x="180" y="1001" font-family="sans-serif" font-size="12" fill="#0f172a">#10  t=6  epoch=0  PublishInvoked   event-001</text>
+  <line x1="180" y1="1021" x2="547.059" y2="1021" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+  <circle cx="547.059" cy="1021" r="4" fill="#334155" />
+  <text x="180" y="1059" font-family="sans-serif" font-size="12" fill="#0f172a">#11  t=6  epoch=0  HookReached publish.before  event-001</text>
+  <line x1="180" y1="1079" x2="547.059" y2="1079" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="547.059" cy="1079" r="4" fill="#334155" />
+  <text x="180" y="1117" font-family="sans-serif" font-size="12" fill="#0f172a">#13  t=7  epoch=0  HookReached publish.after-accept  event-001</text>
+  <line x1="180" y1="1137" x2="608.235" y2="1137" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="608.235" cy="1137" r="4" fill="#334155" />
+  <text x="180" y="1175" font-family="sans-serif" font-size="12" fill="#0f172a">#14  t=7  epoch=0  CrashInjected publish.after-accept  event-001</text>
+  <line x1="180" y1="1195" x2="608.235" y2="1195" stroke="#94a3b8" stroke-width="2" />
+  <line x1="603.235" y1="1190" x2="613.235" y2="1200" stroke="#b91c1c" stroke-width="2" />
+  <line x1="603.235" y1="1200" x2="613.235" y2="1190" stroke="#b91c1c" stroke-width="2" />
+  <text x="180" y="1233" font-family="sans-serif" font-size="12" fill="#0f172a">#16  t=15  epoch=1  PublishInvoked   event-001</text>
+  <line x1="180" y1="1253" x2="1097.647" y2="1253" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+  <circle cx="1097.647" cy="1253" r="4" fill="#334155" />
+  <text x="180" y="1291" font-family="sans-serif" font-size="12" fill="#0f172a">#17  t=15  epoch=1  HookReached publish.before  event-001</text>
+  <line x1="180" y1="1311" x2="1097.647" y2="1311" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1097.647" cy="1311" r="4" fill="#334155" />
+  <text x="180" y="1349" font-family="sans-serif" font-size="12" fill="#0f172a">#19  t=16  epoch=1  HookReached publish.after-accept  event-001</text>
+  <line x1="180" y1="1369" x2="1158.824" y2="1369" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1369" r="4" fill="#334155" />
+  <text x="180" y="1407" font-family="sans-serif" font-size="12" fill="#0f172a">#21  t=16  epoch=1  HookReached publish.after-ack  event-001</text>
+  <line x1="180" y1="1427" x2="1158.824" y2="1427" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1427" r="4" fill="#334155" />
+  <text x="180" y="1465" font-family="sans-serif" font-size="12" fill="#0f172a">#22  t=16  epoch=1  HookReached sent-update.before sent-tx-1 event-001</text>
+  <line x1="180" y1="1485" x2="1158.824" y2="1485" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1485" r="4" fill="#334155" />
+  <text x="180" y="1523" font-family="sans-serif" font-size="12" fill="#0f172a">#24  t=16  epoch=1  HookReached sent-update.after sent-tx-1 event-001</text>
+  <line x1="180" y1="1543" x2="1158.824" y2="1543" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1543" r="4" fill="#334155" />
+  <text x="180" y="1581" font-family="sans-serif" font-size="12" fill="#0f172a">#25  t=16  epoch=1  HookReached sent-commit.before sent-tx-1 event-001</text>
+  <line x1="180" y1="1601" x2="1158.824" y2="1601" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1601" r="4" fill="#334155" />
+  <text x="180" y="1639" font-family="sans-serif" font-size="12" fill="#0f172a">#27  t=17  epoch=1  HookReached sent-commit.after sent-tx-1 event-001</text>
+  <line x1="180" y1="1659" x2="1220" y2="1659" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1220" cy="1659" r="4" fill="#334155" />
+  <rect x="16" y="1693" width="1248" height="216" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="30" y="1717" font-family="sans-serif" font-size="16" fill="#0f172a">Broker</text>
+  <text x="180" y="1739" font-family="sans-serif" font-size="12" fill="#0f172a">#12  t=7  epoch=0  BrokerAccepted   event-001</text>
+  <line x1="180" y1="1759" x2="608.235" y2="1759" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+  <circle cx="608.235" cy="1759" r="4" fill="#334155" />
+  <text x="180" y="1797" font-family="sans-serif" font-size="12" fill="#0f172a">#18  t=16  epoch=1  BrokerAccepted   event-001 DUPLICATE</text>
+  <line x1="180" y1="1817" x2="1158.824" y2="1817" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" />
+  <circle cx="1158.824" cy="1817" r="4" fill="#334155" />
+  <text x="180" y="1855" font-family="sans-serif" font-size="12" fill="#0f172a">#20  t=16  epoch=1  BrokerAck   event-001</text>
+  <line x1="180" y1="1875" x2="1158.824" y2="1875" stroke="#94a3b8" stroke-width="2" />
+  <circle cx="1158.824" cy="1875" r="4" fill="#334155" />
+</svg>

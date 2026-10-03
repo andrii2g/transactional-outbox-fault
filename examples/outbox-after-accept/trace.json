@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "sequence": 1,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "order-insert.before",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 2,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "MutationExecuted",
+      "component": null,
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "operation": "order-insert"
+      }
+    },
+    {
+      "sequence": 3,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "order-insert.after",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 4,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "outbox-insert.before",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 5,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "MutationExecuted",
+      "component": null,
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "operation": "outbox-insert"
+      }
+    },
+    {
+      "sequence": 6,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "outbox-insert.after",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 7,
+      "tick": 0,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "producer-commit.before",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 8,
+      "tick": 1,
+      "epoch": 0,
+      "kind": "TransactionCommitted",
+      "component": null,
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "mutations": "2"
+      }
+    },
+    {
+      "sequence": 9,
+      "tick": 1,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "producer",
+      "point": "producer-commit.after",
+      "eventId": "event-001",
+      "transactionId": "producer-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 10,
+      "tick": 6,
+      "epoch": 0,
+      "kind": "PublishInvoked",
+      "component": "dispatcher",
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 11,
+      "tick": 6,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "publish.before",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 12,
+      "tick": 7,
+      "epoch": 0,
+      "kind": "BrokerAccepted",
+      "component": "dispatcher",
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 13,
+      "tick": 7,
+      "epoch": 0,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "publish.after-accept",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 14,
+      "tick": 7,
+      "epoch": 0,
+      "kind": "CrashInjected",
+      "component": "dispatcher",
+      "point": "publish.after-accept",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 15,
+      "tick": 10,
+      "epoch": 1,
+      "kind": "RuntimeRestarted",
+      "component": null,
+      "point": null,
+      "eventId": null,
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 16,
+      "tick": 15,
+      "epoch": 1,
+      "kind": "PublishInvoked",
+      "component": "dispatcher",
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 17,
+      "tick": 15,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "publish.before",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {
+        "occurrence": "2"
+      }
+    },
+    {
+      "sequence": 18,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "BrokerAccepted",
+      "component": "dispatcher",
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 19,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "publish.after-accept",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {
+        "occurrence": "2"
+      }
+    },
+    {
+      "sequence": 20,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "BrokerAck",
+      "component": "dispatcher",
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {}
+    },
+    {
+      "sequence": 21,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "publish.after-ack",
+      "eventId": "event-001",
+      "transactionId": null,
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 22,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "sent-update.before",
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 23,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "MutationExecuted",
+      "component": null,
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "operation": "sent-update"
+      }
+    },
+    {
+      "sequence": 24,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "sent-update.after",
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 25,
+      "tick": 16,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "sent-commit.before",
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    },
+    {
+      "sequence": 26,
+      "tick": 17,
+      "epoch": 1,
+      "kind": "TransactionCommitted",
+      "component": null,
+      "point": null,
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "mutations": "1"
+      }
+    },
+    {
+      "sequence": 27,
+      "tick": 17,
+      "epoch": 1,
+      "kind": "HookReached",
+      "component": "dispatcher",
+      "point": "sent-commit.after",
+      "eventId": "event-001",
+      "transactionId": "sent-tx-1",
+      "details": {
+        "occurrence": "1"
+      }
+    }
+  ]
+}

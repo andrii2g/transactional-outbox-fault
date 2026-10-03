@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "publish-first--baseline",
+  "strategy": "publish-first",
+  "command": {
+    "orderId": "order-001",
+    "eventId": "event-001",
+    "amountCents": 1250
+  },
+  "timing": {
+    "commitTicks": 1,
+    "publishTicks": 1,
+    "pollTicks": 5,
+    "restartTicks": 3,
+    "retryBaseTicks": 2,
+    "retryCapTicks": 8
+  },
+  "budgets": {
+    "maxRestarts": 4,
+    "maxPublishAttempts": 10,
+    "maxTicks": 1000
+  },
+  "faults": [],
+  "broker": {
+    "outcomes": [],
+    "defaultOutcome": "accept-ack"
+  },
+  "expected": {
+    "committedOrders": 1,
+    "acceptedDeliveries": 1,
+    "duplicateDeliveries": 0,
+    "lostEvents": 0,
+    "ghostEvents": 0,
+    "pendingOutboxRows": 0,
+    "publishAttempts": 1,
+    "publishRetries": 0,
+    "committedRowMutations": 1,
+    "extraWrites": 0,
+    "transactionCommits": 1,
+    "restartCount": 0,
+    "executionStatus": "completed"
+  }
+}
